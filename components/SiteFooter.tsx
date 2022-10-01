@@ -9,12 +9,12 @@ function SiteFooter() {
         <div className="footer-top">
           <div className="container">
             <div className="row">
-              <div className="col-lg-4 col-md-6 col-12">
+              <div className="col-lg-5 col-md-6 col-12">
                 <div
                   className="footer-cmn f-activity wow fadeInUp"
                   data-wow-delay=".2s"
                 >
-                  <h6>GET IN TOUCH</h6>
+                  <h6 className="mb-5">GET IN TOUCH</h6>
                   <h5>Follow Our Activity</h5>
                   <p>
                     Making the world a better place through constructing elegant
@@ -40,32 +40,7 @@ function SiteFooter() {
                   </ul>
                 </div>
               </div>
-              <div className="col-lg-2 col-md-6 col-12">
-                <div
-                  className="footer-cmn f-solutions f-links wow fadeInUp"
-                  data-wow-delay=".4s"
-                >
-                  <h5>Solutions</h5>
-                  <ul>
-                    <li>
-                      <Link href="/">Mechanical</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Electrical</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Fabrication</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Automation</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Construction</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-6 col-12">
+              <div className="col-lg-3 col-md-6 col-12">
                 <div
                   className="footer-cmn f-legal f-links wow fadeInUp"
                   data-wow-delay=".6s"

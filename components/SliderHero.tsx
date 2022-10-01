@@ -12,7 +12,7 @@ function SliderHero() {
               <div className="col-lg-7 col-md-9 col-12">
                 <div className="hero-content">
                   <h1 className="wow fadeInLeft" data-wow-delay=".5s">
-                    We will provide you <span>the best Golde Reserve</span>
+                    We will provide you <span>the best Gold Reserve</span>
                   </h1>
                   <p className="wow fadeInLeft" data-wow-delay="1s">
                     We are the best guarenteed company to serve you. We are
