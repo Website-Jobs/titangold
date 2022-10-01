@@ -15,11 +15,12 @@ function SiteFooter() {
                   data-wow-delay=".2s"
                 >
                   <h6 className="mb-5">GET IN TOUCH</h6>
-                  <h5>Follow Our Activity</h5>
+                  <h5>About Titan Gold LLC</h5>
                   <p>
-                    Making the world a better place through constructing elegant
-                    hierarchies. Innovations enabled by the Steeler institutes
-                    results in products that assist workers.
+                    The Titan Gold LLC offers a uniquely consultative approach
+                    to purchasing and selling physical gold and silver,
+                    regardless of how much you are looking to invest. results in
+                    products that assist workers.
                   </p>
                   <ul className="social d-flex mt-30">
                     <li>
@@ -45,22 +46,22 @@ function SiteFooter() {
                   className="footer-cmn f-legal f-links wow fadeInUp"
                   data-wow-delay=".6s"
                 >
-                  <h5>Legal</h5>
+                  <h5>Our Links</h5>
                   <ul>
                     <li>
-                      <Link href="/">Terms &amp; Conditions</Link>
+                      <Link href="/pages/about">About Us</Link>
                     </li>
                     <li>
-                      <Link href="/">Privacy Policy</Link>
+                      <Link href="/pages/mining">Mining</Link>
                     </li>
                     <li>
-                      <Link href="/">Catering Services</Link>
+                      <Link href="/pages/investments">Investments</Link>
                     </li>
                     <li>
-                      <Link href="/">Customer Relations</Link>
+                      <Link href="/pages/reserve">Reserve</Link>
                     </li>
                     <li>
-                      <Link href="/">Innovation</Link>
+                      <Link href="/pages/contacts">Contact Us</Link>
                     </li>
                   </ul>
                 </div>
@@ -70,24 +71,24 @@ function SiteFooter() {
                   className="footer-cmn f-address wow fadeInUp"
                   data-wow-delay=".8s"
                 >
-                  <h6>BALTIMORE</h6>
+                  <h6>DUBAI</h6>
                   <h5>Head Office</h5>
                   <p>
-                    Innovations enabled by the Steeler institutes results in
-                    products that assist workers.
+                    203 Al Mankhool Street Opposite Al Khaleej Center Diana
+                    Dubai
                   </p>
                   <ul className="mt-20">
                     <li>
                       <Link href="/">
                         <a>
-                          <i className="flaticon-mobile" /> +1 555 222 000 111
+                          <i className="flaticon-mobile" /> +971557453069
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link href="/">
                         <a>
-                          <i className="flaticon-mail" /> info@example.com
+                          <i className="flaticon-mail" /> info@titangoldllc.com
                         </a>
                       </Link>
                     </li>
@@ -95,7 +96,7 @@ function SiteFooter() {
                       <Link href="/">
                         <a>
                           <i className="flaticon-startup" />
-                          www.example.com
+                          www.titangoldllc.com
                         </a>
                       </Link>
                     </li>
