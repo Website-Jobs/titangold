@@ -10,7 +10,6 @@ function SiteHeader() {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <div className="nav-inner">
-                {/* Start Navbar */}
                 <nav className="navbar navbar-expand-lg">
                   <Link className="navbar-brand style3" href="/">
                     <Image
@@ -24,7 +23,7 @@ function SiteHeader() {
                     className="navbar-toggler mobile-menu-btn"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
+                    data-bs-target="/navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
@@ -46,46 +45,42 @@ function SiteHeader() {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/">
+                        <Link href="/pages/about">
                           <a aria-label="Toggle navigation">About</a>
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/">
+                        <Link href="/pages/mining">
                           <a aria-label="Toggle navigation">Mining</a>
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/">
+                        <Link href="/pages/investments">
                           <a aria-label="Toggle navigation">Investments</a>
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/">
+                        <Link href="/pages/reserve">
                           <a aria-label="Toggle navigation">Reserve</a>
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link href="/">
+                        <Link href="/pages/contacts">
                           <a aria-label="Toggle navigation">Contact</a>
                         </Link>
                       </li>
                     </ul>
                   </div>
-                  {/* navbar collapse */}
                   <div className="button add-list-button">
-                    <Link href="/">
+                    <Link href="/users/login">
                       <a className="btn">Login: Gold Portal</a>
                     </Link>
                   </div>
                 </nav>
-                {/* End Navbar */}
               </div>
             </div>
-          </div>{" "}
-          {/* row */}
-        </div>{" "}
-        {/* container */}
+          </div>
+        </div>
       </header>
     </>
   );

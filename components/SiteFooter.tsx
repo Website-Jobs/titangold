@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function SiteFooter() {
   return (
@@ -22,19 +23,19 @@ function SiteFooter() {
                   </p>
                   <ul className="social d-flex mt-30">
                     <li>
-                      <a href="javascript:void(0)">
+                      <Link href="/">
                         <i className="fa fa-facebook" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">
+                      <Link href="/">
                         <i className="fa fa-twitter" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">
+                      <Link href="/">
                         <i className="fa fa-linkedin" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -47,19 +48,19 @@ function SiteFooter() {
                   <h5>Solutions</h5>
                   <ul>
                     <li>
-                      <a href="javascript:void(0)">Mechanical</a>
+                      <Link href="/">Mechanical</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Electrical</a>
+                      <Link href="/">Electrical</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Fabrication</a>
+                      <Link href="/">Fabrication</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Automation</a>
+                      <Link href="/">Automation</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Construction</a>
+                      <Link href="/">Construction</Link>
                     </li>
                   </ul>
                 </div>
@@ -72,19 +73,19 @@ function SiteFooter() {
                   <h5>Legal</h5>
                   <ul>
                     <li>
-                      <a href="javascript:void(0)">Terms &amp; Conditions</a>
+                      <Link href="/">Terms &amp; Conditions</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Privacy Policy</a>
+                      <Link href="/">Privacy Policy</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Catering Services</a>
+                      <Link href="/">Catering Services</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Customer Relations</a>
+                      <Link href="/">Customer Relations</Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">Innovation</a>
+                      <Link href="/">Innovation</Link>
                     </li>
                   </ul>
                 </div>
@@ -102,20 +103,26 @@ function SiteFooter() {
                   </p>
                   <ul className="mt-20">
                     <li>
-                      <a href="javascript:void(0)">
-                        <i className="flaticon-mobile" /> +1 555 222 000 111
-                      </a>
+                      <Link href="/">
+                        <a>
+                          <i className="flaticon-mobile" /> +1 555 222 000 111
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">
-                        <i className="flaticon-mail" /> info@example.com
-                      </a>
+                      <Link href="/">
+                        <a>
+                          <i className="flaticon-mail" /> info@example.com
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">
-                        <i className="flaticon-startup" />
-                        www.example.com{" "}
-                      </a>
+                      <Link href="/">
+                        <a>
+                          <i className="flaticon-startup" />
+                          www.example.com
+                        </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -130,9 +137,9 @@ function SiteFooter() {
               <div className="col-12">
                 <p className="copyright-text">
                   Designed &amp; Developed by{" "}
-                  <a href="javascript:void(0)/" rel="nofollow">
+                  <Link href="/" rel="nofollow">
                     Idrak
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
