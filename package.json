@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typegoose/auto-increment": "^1.8.0",
+    "jotai": "^1.8.6",
+    "js-cookie": "^3.0.1",
     "next": "12.3.1",
+    "next-cookies": "^2.0.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-spinners": "^0.13.6",
+    "react-toastify": "^9.0.8"
   },
   "devDependencies": {
     "@types/node": "18.7.23",

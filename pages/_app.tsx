@@ -9,10 +9,15 @@ import "../public/assets/css/glightbox.min.css";
 import "../public/assets/css/typography.css";
 import "../public/assets/style.css";
 
+import { Provider } from "jotai";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Provider>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
 
 export default MyApp;
