@@ -13,7 +13,7 @@ import { withAuthSync } from "../../utils/auth";
 import { NextPage } from "next";
 import { useAtom } from "jotai";
 import { userAtom } from "../../app";
-const Assets: NextPage = ({ accid }: any) => {
+const Asset: NextPage = ({ accid }: any) => {
   const [user, setUser] = useAtom(userAtom);
   useEffect(() => {
     const getUser = async () => {
@@ -35,7 +35,7 @@ const Assets: NextPage = ({ accid }: any) => {
             <div className="card contact-form">
               <div className="card-body p-4">
                 <h4 className="mb-4">
-                  Partner Profile
+                  My Gold Asset
                   <hr />
                 </h4>
                 <span style={{ float: "right" }}>
@@ -49,25 +49,19 @@ const Assets: NextPage = ({ accid }: any) => {
                 <div id="form-messages" />
                 <form id="ajax-contact" className="mt-10">
                   <div className="row">
-                    <div className="col-lg-9 col-md-9 col-sm-12">
-                      <div className="form-group mb-10">
-                        <label htmlFor="email">Email Address</label>
-                        <h3>{user.email}</h3>
-                      </div>
-                    </div>
                     <div className="col-lg-6 col-md-6 col-sm-12">
                       <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                           <div className="form-group mb-10">
-                            <label htmlFor="firstname">First Name</label>
-                            <h3>{user.firstname}</h3>
+                            <label>Gold Value (USD)</label>
+                            <h3>$500,000.00 USD</h3>
                           </div>
                         </div>
 
                         <div className="col-lg-12 col-md-12 col-sm-12">
                           <div className="form-group mb-10">
-                            <label htmlFor="lastname">Last Name</label>
-                            <h3>{user.lastname}</h3>
+                            <label>Investment Date</label>
+                            <h3>Date Invested</h3>
                           </div>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -89,4 +83,4 @@ const Assets: NextPage = ({ accid }: any) => {
   );
 };
 
-export default withAuthSync(Assets);
+export default withAuthSync(Asset);

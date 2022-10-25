@@ -45,7 +45,9 @@ const MyHome: NextPage = ({ accid }: any) => {
                     >
                       <i className="flaticon-user" />
                       <Link href="/my/profile">
-                        <h5>My Profile</h5>
+                        <a>
+                          <h5>My Profile</h5>
+                        </a>
                       </Link>
                     </div>
                   </div>
@@ -55,8 +57,10 @@ const MyHome: NextPage = ({ accid }: any) => {
                       data-wow-delay=".2s"
                     >
                       <i className="flaticon-piston" />
-                      <Link href="/my/">
-                        <h5>My Gold Asset</h5>
+                      <Link href="/my/asset">
+                        <a>
+                          <h5>My Gold Asset</h5>
+                        </a>
                       </Link>
                     </div>
                   </div>

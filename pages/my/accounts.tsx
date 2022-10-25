@@ -38,7 +38,7 @@ const Accounts: NextPage = ({ accid }: any) => {
     };
     getUsers();
     getUser();
-  }, [accid, setUser, users, busy, setUsers]);
+  }, [accid, busy]);
 
   const deleteThisUser = async (userid: any) => {
     setBusy(true);
@@ -78,9 +78,9 @@ const Accounts: NextPage = ({ accid }: any) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12 my-3">
-            <a href="/my/create" className="btn p-1  btn-info pull-right">
-              + Account
-            </a>
+            <Link href="/my/create">
+              <a className="btn p-1  btn-info pull-right">+ Account</a>
+            </Link>
             <table className="table table-responsive">
               <thead>
                 <tr>
@@ -111,17 +111,14 @@ const Accounts: NextPage = ({ accid }: any) => {
                         </Link>
                         {usr.role == "user" && (
                           <>
-                            <Link href="#">
-                              <a
-                                onClick={(e) => deleteThisUser(usr._id)}
-                                className="btn btn-md p-1 mx-1 btn-info"
-                              >
+                            <Link href={`/my/${usr._id}/edit`}>
+                              <a className="btn btn-md p-1 mx-1 btn-info">
                                 Marge
                               </a>
                             </Link>
                             <Link href="#">
                               <a
-                                onClick={(e) => mergeThisUser(usr._id)}
+                                onClick={(e) => deleteThisUser(usr._id)}
                                 className="btn btn-md p-1 mx-1 btn-danger"
                               >
                                 Delete

@@ -2,9 +2,6 @@ import { NextApiRequest, NextApiResponse,PageConfig } from 'next';
 import { dbCon } from '../../../models';
 import { ResponseFunctions } from '../../../interfaces';
 
-const multer = require('multer')
-
-
 const formidableConfig = {
     keepExtensions: true,
     maxFileSize: 10_000_000,
