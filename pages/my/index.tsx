@@ -109,8 +109,8 @@ const MyHome: NextPage = ({ accid }: any) => {
                       data-wow-delay=".2s"
                     >
                       <i className="flaticon-checkmark" />
-                      <Link href="/my/assets">
-                        <h5>All Gold Assets</h5>
+                      <Link href="/my/partners">
+                        <h5>All Partners</h5>
                       </Link>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ const MyHome: NextPage = ({ accid }: any) => {
                       data-wow-delay=".6s"
                     >
                       <i className="flaticon-smile" />
-                      <Link href="/my/partner">
+                      <Link href="/my/edit-partner">
                         <h5>Edit Partner</h5>
                       </Link>
                     </div>
