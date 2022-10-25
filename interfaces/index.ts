@@ -23,6 +23,25 @@ export interface IUser {
     password?: string;
 }
 
+
+
+export interface IPartner {
+    _id?: string;
+    id?: string;
+    avatar?: string;
+    role?: string;
+    lastname?: string;
+    firstname?: string;
+    email?: string;
+    mobile?:string;
+    address?:string;
+    country?:string;
+    gold?: string;
+    amount?: string;
+    created?: string;
+}
+
+
 export interface IMeta {
     title?: string;
     description?:string;

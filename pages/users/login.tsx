@@ -79,7 +79,7 @@ const Login: NextPage = () => {
                       <i className="fa fa-lock" />
                     </span>
                     <input
-                      type="text"
+                      type="password"
                       className="form-control"
                       name="password"
                       placeholder="Password"

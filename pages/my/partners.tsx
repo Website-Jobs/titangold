@@ -25,7 +25,7 @@ const Accounts: NextPage = ({ accid }: any) => {
 
   useEffect(() => {
     const getUsers = async () => {
-      const response = await fetch(`/api/users/list`);
+      const response = await fetch(`/api/partners/list`);
       const users = await response.json();
       if (users.status) {
         setUsers(users.accounts);
@@ -50,7 +50,7 @@ const Accounts: NextPage = ({ accid }: any) => {
         type: "success",
       });
       setBusy(false);
-      router.push("/my/accounts?done=+");
+      router.push("/my/partners?done=+");
     }
   };
 
@@ -64,22 +64,22 @@ const Accounts: NextPage = ({ accid }: any) => {
         type: "success",
       });
       setBusy(false);
-      router.push("/my/accounts?done=+");
+      router.push("/my/partners?done=+");
     }
   };
 
   return (
     <SiteLayout>
       <SubHero
-        menutitle="Accounts"
+        menutitle="Partners"
         title={`${user.lastname} ${user.firstname}`}
       />
-      
+
       <div className="container">
         <div className="row">
           <div className="col-lg-12 my-3">
-            <Link href="/my/create">
-              <a className="btn p-1  btn-info pull-right">+ Account</a>
+            <Link href="/my/create-partner">
+              <a className="btn p-1  btn-info pull-right">+ Partner</a>
             </Link>
             <table className="table table-responsive">
               <thead>
