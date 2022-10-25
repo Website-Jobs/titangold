@@ -15,7 +15,7 @@ function SiteLayout({ children }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Titan Gold LLC</title>
+        <title>Titan Gold LLC.</title>
       </Head>
       <SiteHeader />
       <ToastContainer />
