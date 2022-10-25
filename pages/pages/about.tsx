@@ -1,8 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import SiteLayout from "../../components/SiteLayout";
+import dynamic from "next/dynamic";
+const SiteLayout = dynamic(
+  () => {
+    return import("../../components/SiteLayout");
+  },
+  { ssr: false }
+);
 import SubHero from "../../components/SubHero";
-function about() {
+function About() {
   return (
     <SiteLayout>
       <SubHero menutitle="About Us" title="Titan Gold LLC" />
@@ -53,4 +59,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;

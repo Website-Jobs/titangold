@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { accidAtom } from "../app";
+import { useAtom } from "jotai";
+import { logout } from "../utils/auth";
 
 function SiteHeader() {
+  const [accid] = useAtom(accidAtom);
   return (
     <>
       <header className="header navbar-area">
@@ -72,9 +76,22 @@ function SiteHeader() {
                     </ul>
                   </div>
                   <div className="button add-list-button">
-                    <Link href="/users/login">
-                      <a className="btn">Login: Gold Portal</a>
-                    </Link>
+                    {accid ? (
+                      <>
+                        <Link href="/my">
+                          <a className="btn">Dashboard</a>
+                        </Link>
+                        <Link href="#">
+                          <a onClick={() => logout()} className="btn mx-2">
+                            Logout
+                          </a>
+                        </Link>
+                      </>
+                    ) : (
+                      <Link href="/users/login">
+                        <a className="btn">Login: Gold Portal</a>
+                      </Link>
+                    )}
                   </div>
                 </nav>
               </div>

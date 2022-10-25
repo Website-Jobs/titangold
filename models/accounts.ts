@@ -8,10 +8,9 @@ const accountsScheme = new mongoose.Schema(
             type: Number,
             unique:true
         },
-        usertype: String,
         avatar: {
             type: String,
-            default:'/images/avatar/5.jpg'
+            default:'/avatar/user.png'
         },
         firstname: { type: String, default: '' },
         lastname: { type: String, default: '' },
@@ -25,6 +24,8 @@ const accountsScheme = new mongoose.Schema(
             type:String,
             default:'user'
         },
+        address: String,
+        country: String,
         enabled: {
             type: Boolean,
             default: false,
@@ -33,8 +34,9 @@ const accountsScheme = new mongoose.Schema(
     { timestamps: true }
 );
 
-
 delete mongoose.models.Accounts;
+
+
 accountsScheme.plugin(AutoIncrementID, {field: 'accid'});
 const Accounts = mongoose.models.Accounts || mongoose.model('Accounts', accountsScheme);
 export default Accounts;

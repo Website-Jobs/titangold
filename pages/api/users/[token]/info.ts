@@ -20,11 +20,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                 role: result.role,
                 address: result.address,
                 country: result.country,
+                password: result.password,
                 avatar: result.avatar,
-                btc: result.btc,
-                usd: result.usd,
-                lastseen: result.lastseen,
-                active: result.active,
+                enabled: result.enabled,
             });
         },
     };

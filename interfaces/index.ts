@@ -9,14 +9,17 @@ export interface ResponseFunctions {
 }
 
 export interface IUser {
+    _id?: string;
     id?: string;
     accid?: number;
     avatar?: string;
-    usertype?: string;
+    role?: string;
     lastname?: string;
     firstname?: string;
     email?: string;
     mobile?:string;
+    address?:string;
+    country?:string;
     password?: string;
 }
 

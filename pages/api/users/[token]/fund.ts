@@ -12,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             const { token } = req.query;
             const { btc, usd, action } = req.body;
 
-            const { Accounts, Deposits } = await dbCon();
+            const { Accounts } = await dbCon();
 
             let oldUSD = 0;
             let oldBTC = 0;

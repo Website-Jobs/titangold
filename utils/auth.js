@@ -1,45 +1,48 @@
 import { useEffect } from 'react'
 import Router from 'next/router'
 import nextCookie from 'next-cookies'
-import cookie from 'js-cookie'
-
+const cookie = require('js-cookie')
+import { useAtom } from 'jotai'
+import { accidAtom } from '../app'
 
 export const login = (accid, expires) => {
     const inMinutes = new Date(new Date().getTime() + expires * 60 * 1000);
     cookie.set('accid', accid, { expires: inMinutes })
-    Router.push('/my')
-}
-
-export const auth = ctx => {
-    const { accid } = nextCookie(ctx)
-    if (!accid) {
-        if (typeof window === 'undefined') {
-            ctx.res.writeHead(302, { Location: '/auth/login' })
-            ctx.res.end()
-        } else {
-            Router.push('/auth/login')
-        }
-    }
-    return accid
+    Router.push('/my/')
 }
 
 export const logout = () => {
     cookie.remove('accid')
     window.localStorage.setItem('logout', Date.now())
-    Router.push('/auth/login')
+    Router.push("/users/login")
+}
+export const auth = ctx => {
+    const { accid } = nextCookie(ctx)
+    if (!accid) {
+        if (typeof window === 'undefined') {
+            ctx.res.writeHead(302, { Location: '/users/login' })
+            ctx.res.end()
+        } else {
+            Router.push('/users/login')
+        }
+    }
+    return accid
 }
 
-export const withAuthSync = WrappedComponent => {
 
+
+export const withAuthSync = WrappedComponent => {
     const Wrapper = props => {
         const syncLogout = event => {
             if (event.key === 'logout') {
                 console.log('logged out from storage!')
-                Router.push('/auth/login')
+                Router.push('/users/login')
             }
         }
+        const [, setAccid] = useAtom(accidAtom);
         useEffect(() => {
             window.addEventListener('storage', syncLogout)
+            setAccid(cookie.get('accid'));
             return () => {
                 window.removeEventListener('storage', syncLogout)
                 window.localStorage.removeItem('logout')
