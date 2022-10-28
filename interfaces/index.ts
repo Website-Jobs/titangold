@@ -14,6 +14,7 @@ export interface IUser {
     accid?: number;
     avatar?: string;
     role?: string;
+    partnerid?:string,
     lastname?: string;
     firstname?: string;
     email?: string;
@@ -22,8 +23,6 @@ export interface IUser {
     country?:string;
     password?: string;
 }
-
-
 
 export interface IPartner {
     _id?: string;

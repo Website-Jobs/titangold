@@ -74,7 +74,7 @@ const Accounts: NextPage = ({ accid }: any) => {
         menutitle="Accounts"
         title={`${user.lastname} ${user.firstname}`}
       />
-      
+
       <div className="container">
         <div className="row">
           <div className="col-lg-12 my-3">
@@ -111,7 +111,7 @@ const Accounts: NextPage = ({ accid }: any) => {
                         </Link>
                         {usr.role == "user" && (
                           <>
-                            <Link href={`/my/${usr._id}/edit`}>
+                            <Link href={`/my/${usr._id}/merge`}>
                               <a className="btn btn-md p-1 mx-1 btn-info">
                                 Marge
                               </a>

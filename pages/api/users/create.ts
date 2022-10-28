@@ -2,15 +2,6 @@ import { NextApiRequest, NextApiResponse,PageConfig } from 'next';
 import { dbCon } from '../../../models';
 import { ResponseFunctions } from '../../../interfaces';
 
-const formidableConfig = {
-    keepExtensions: true,
-    maxFileSize: 10_000_000,
-    maxFieldsSize: 10_000_000,
-    maxFields: 2,
-    allowEmptyFiles: false,
-    multiples: false,
-};
-
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const method: keyof ResponseFunctions = req.method as keyof ResponseFunctions;
@@ -21,7 +12,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
         POST: async (req: NextApiRequest, res: NextApiResponse) => {
 
-            const { firstname, lastname, mobile, email, country, address, password, role } = req.body;
+           const { firstname, lastname, mobile, email, country, address, password, role } = req.body;
+
             const { Accounts } = await dbCon();
             const created = await Accounts.create({
 
@@ -47,10 +39,3 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (response) response(req, res);
     else res.status(400).json({ status: 0, error: 'No Response for This Request' });
 }
-
-
-export const config:PageConfig= {
-    api: {
-        bodyParser: false,
-    },
-};

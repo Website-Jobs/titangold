@@ -24,6 +24,7 @@ const accountsScheme = new mongoose.Schema(
             type:String,
             default:'user'
         },
+        partnerid:String,
         address: String,
         country: String,
         enabled: {

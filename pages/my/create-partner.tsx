@@ -44,8 +44,6 @@ const CreateUser: NextPage = ({ accid }: any) => {
 
   const createPartnerr = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-
-    alert(JSON.stringify(partner));
     const response = await fetch(`/api/partners/create`, {
       method: "post",
       mode: "cors",
@@ -55,7 +53,6 @@ const CreateUser: NextPage = ({ accid }: any) => {
       body: JSON.stringify(partner),
     });
     const partnerinfo = await response.json();
-    alert(partnerinfo);
     if (partnerinfo.status) {
       toast("Great! You have created a new partner succesfully", {
         autoClose: 5000,
