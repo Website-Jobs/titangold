@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { accidAtom } from "../app";
 import { useAtom } from "jotai";
-import { logout, loggedIn } from "../utils/auth";
+import { logout, getToken } from "../utils/auth";
 
 function SiteHeader() {
   const [accid] = useAtom(accidAtom);
@@ -77,7 +77,7 @@ function SiteHeader() {
                     </ul>
                   </div>
                   <div className="button add-list-button">
-                    {accid && loggedIn() ? (
+                    {accid && getToken() ? (
                       <>
                         <Link href="/my">
                           <a className="btn">Dashboard</a>

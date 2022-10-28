@@ -17,6 +17,15 @@ export const logout = () => {
     Router.push("/users/login")
 }
 
+
+export const getToken = () => {
+    let accid = null;
+    if (typeof document !== 'undefined') {
+        accid = cookie.get('accid')
+    }
+    return accid
+}
+
 export const loggedIn = ctx => {
     // Checks if there is a saved token and it's still valid
     const { accid } = nextCookie(ctx);
