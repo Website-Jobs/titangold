@@ -15,4 +15,6 @@ export const newUserAtom = atom<IUser>(initUser);
 
 
 const initPartner = {};
+
+export const partnerAtom = atom<IPartner>(initUser);
 export const newPartnerAtom = atom<IPartner>(initPartner);

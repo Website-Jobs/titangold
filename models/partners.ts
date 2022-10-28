@@ -18,7 +18,7 @@ const partnersScheme = new mongoose.Schema(
         address: String,
         country: String,
         gold: String,
-        total: Number,
+        amount: Number,
         created: String,
         expires: String,
         enabled: {

@@ -11,7 +11,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
         POST: async (req: NextApiRequest, res: NextApiResponse) => {
             const { email, password } = req.body;
-            console.log(email);
             const { Accounts } = await dbCon();
             const account = await Accounts.findOne({ email: email, password: password }).catch(catcher);
             if (!account) {

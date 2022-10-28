@@ -12,13 +12,13 @@ import { withAuthSync } from "../../utils/auth";
 import { NextPage } from "next";
 import { useAtom } from "jotai";
 import { userAtom, busyAtom } from "../../app";
-import { IUser } from "../../interfaces";
+import { IPartner, IUser } from "../../interfaces";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 const Accounts: NextPage = ({ accid }: any) => {
   const [user, setUser] = useAtom(userAtom);
-  const [users, setUsers] = useState<IUser[]>([]);
+  const [partners, setPartners] = useState<IPartner[]>([]);
   const [busy, setBusy] = useAtom(busyAtom);
 
   const router = useRouter();
@@ -26,9 +26,9 @@ const Accounts: NextPage = ({ accid }: any) => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await fetch(`/api/partners/list`);
-      const users = await response.json();
-      if (users.status) {
-        setUsers(users.accounts);
+      const partners = await response.json();
+      if (partners.status) {
+        setPartners(partners.accounts);
       }
     };
     const getUser = async () => {
@@ -40,12 +40,12 @@ const Accounts: NextPage = ({ accid }: any) => {
     getUser();
   }, [accid, busy]);
 
-  const deleteThisUser = async (userid: any) => {
+  const deleteThisPartner = async (userid: any) => {
     setBusy(true);
-    const response = await fetch(`/api/users/${userid}/delete`);
+    const response = await fetch(`/api/partners/${userid}/delete`);
     const deleted = await response.json();
     if (deleted.status) {
-      toast("Great! You have deleted this account succesfully", {
+      toast("Great! You have deleted this partner succesfully", {
         autoClose: 5000,
         type: "success",
       });
@@ -87,45 +87,32 @@ const Accounts: NextPage = ({ accid }: any) => {
                   <th>ID</th>
                   <th>LAST NAME</th>
                   <th>FIRST NAME</th>
-                  <th>EMAIL</th>
-                  <th>MOBILE</th>
-                  <th>COUNTRY</th>
+                  <th>AMOUNT</th>
                   <th>-</th>
                 </tr>
               </thead>
               <tbody>
-                {users.map((usr) => (
+                {partners.map((usr) => (
                   <>
                     <tr>
                       <td>{usr._id}</td>
                       <td>{usr.lastname}</td>
                       <td>{usr.firstname}</td>
-                      <td>{usr.email}</td>
-                      <td>{usr.mobile}</td>
-                      <td>{usr.country}</td>
+                      <td>${usr.amount}</td>
                       <td>
-                        <Link href={`/my/${usr._id}/edit`}>
+                        <Link href={`/my/${usr._id}/edit-partner`}>
                           <a className="btn btn-md p-1 mx-1 btn-success">
                             Edit
                           </a>
                         </Link>
-                        {usr.role == "user" && (
-                          <>
-                            <Link href={`/my/${usr._id}/edit`}>
-                              <a className="btn btn-md p-1 mx-1 btn-info">
-                                Marge
-                              </a>
-                            </Link>
-                            <Link href="#">
-                              <a
-                                onClick={(e) => deleteThisUser(usr._id)}
-                                className="btn btn-md p-1 mx-1 btn-danger"
-                              >
-                                Delete
-                              </a>
-                            </Link>
-                          </>
-                        )}
+                        <Link href="#">
+                          <a
+                            onClick={(e) => deleteThisPartner(usr._id)}
+                            className="btn btn-md p-1 mx-1 btn-danger"
+                          >
+                            Delete
+                          </a>
+                        </Link>
                       </td>
                     </tr>
                   </>
