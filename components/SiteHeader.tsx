@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { accidAtom } from "../app";
@@ -6,7 +6,13 @@ import { useAtom } from "jotai";
 import { logout } from "../utils/auth";
 
 function SiteHeader() {
-  const [accid] = useAtom(accidAtom);
+  const [accid, setAccid] = useAtom(accidAtom);
+  useEffect(() => {
+    if (!accid) {
+      logout;
+    }
+  }, [accid, setAccid]);
+
   return (
     <>
       <header className="header navbar-area">
