@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import SubHero from "../../components/SubHero";
 import Link from "next/link";
-import { withAuthSync } from "../../utils/auth";
+import { logout, withAuthSync } from "../../utils/auth";
 
 import dynamic from "next/dynamic";
 const SiteLayout = dynamic(
@@ -80,9 +80,11 @@ const MyHome: NextPage = ({ accid }: any) => {
                       className="service-item bg-dark mt-25 wow fadeInUp"
                       data-wow-delay=".8s"
                     >
-                      <i className="flaticon-factory" />
-                      <Link href="/my/">
-                        <h5>Gold Market</h5>
+                      <i className="flaticon-case" />
+                      <Link href="#">
+                        <a onClick={logout}>
+                          <h5>Logout App</h5>
+                        </a>
                       </Link>
                     </div>
                   </div>
@@ -114,25 +116,17 @@ const MyHome: NextPage = ({ accid }: any) => {
                       </Link>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".6s"
-                    >
-                      <i className="flaticon-smile" />
-                      <Link href="/my/edit-partner">
-                        <h5>Edit Partner</h5>
-                      </Link>
-                    </div>
-                  </div>
+
                   <div className="col-lg-3 col-md-6">
                     <div
                       className="service-item bg-dark mt-25 wow fadeInUp"
                       data-wow-delay=".8s"
                     >
                       <i className="flaticon-case" />
-                      <Link href="/my/market">
-                        <h5>Edit Market</h5>
+                      <Link href="#">
+                        <a onClick={logout}>
+                          <h5>Logout App</h5>
+                        </a>
                       </Link>
                     </div>
                   </div>
