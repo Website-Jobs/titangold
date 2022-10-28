@@ -35,104 +35,113 @@ const MyHome: NextPage = ({ accid }: any) => {
       <section id="service-section" className="all-service mb-50">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 col-md-12 g-0">
-              <div className="service service-right">
-                <div className="row">
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".4s"
-                    >
-                      <i className="flaticon-user" />
-                      <Link href="/my/profile">
-                        <a>
-                          <h5>My Profile</h5>
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".2s"
-                    >
-                      <i className="flaticon-piston" />
-                      <Link href="/my/asset">
-                        <a>
-                          <h5>My Gold Asset</h5>
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".6s"
-                    >
-                      <i className="flaticon-customer" />
-                      <Link href="/my/partner">
-                        <h5>Partner Profile</h5>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".8s"
-                    >
-                      <i className="flaticon-case" />
-                      <Link href="#">
-                        <a onClick={logout}>
-                          <h5>Logout App</h5>
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 col-md-12 g-0">
-              <div className="service service-right">
-                <div className="row">
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".4s"
-                    >
-                      <i className="flaticon-user" />
-                      <Link href="/my/accounts">
-                        <h5>All Accounts</h5>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".2s"
-                    >
-                      <i className="flaticon-checkmark" />
-                      <Link href="/my/partners">
-                        <h5>All Partners</h5>
-                      </Link>
-                    </div>
-                  </div>
+            {user.role == "admin" ? (
+              <>
+                {" "}
+                <div className="col-lg-12 col-md-12 g-0">
+                  <div className="service service-right">
+                    <div className="row">
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".4s"
+                        >
+                          <i className="flaticon-user" />
+                          <Link href="/my/accounts">
+                            <h5>All Accounts</h5>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".2s"
+                        >
+                          <i className="flaticon-checkmark" />
+                          <Link href="/my/partners">
+                            <h5>All Partners</h5>
+                          </Link>
+                        </div>
+                      </div>
 
-                  <div className="col-lg-3 col-md-6">
-                    <div
-                      className="service-item bg-dark mt-25 wow fadeInUp"
-                      data-wow-delay=".8s"
-                    >
-                      <i className="flaticon-case" />
-                      <Link href="#">
-                        <a onClick={logout}>
-                          <h5>Logout App</h5>
-                        </a>
-                      </Link>
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".8s"
+                        >
+                          <i className="flaticon-case" />
+                          <Link href="#">
+                            <a onClick={logout}>
+                              <h5>Logout App</h5>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </>
+            ) : (
+              <>
+                {" "}
+                <div className="col-lg-12 col-md-12 g-0">
+                  <div className="service service-right">
+                    <div className="row">
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".4s"
+                        >
+                          <i className="flaticon-user" />
+                          <Link href="/my/profile">
+                            <a>
+                              <h5>My Profile</h5>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".2s"
+                        >
+                          <i className="flaticon-piston" />
+                          <Link href="/my/asset">
+                            <a>
+                              <h5>My Gold Asset</h5>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".6s"
+                        >
+                          <i className="flaticon-customer" />
+                          <Link href="/my/partner">
+                            <h5>Partner Profile</h5>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-md-6">
+                        <div
+                          className="service-item bg-dark mt-25 wow fadeInUp"
+                          data-wow-delay=".8s"
+                        >
+                          <i className="flaticon-case" />
+                          <Link href="#">
+                            <a onClick={logout}>
+                              <h5>Logout App</h5>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
