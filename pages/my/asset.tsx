@@ -37,7 +37,7 @@ const Asset: NextPage = ({ accid }: any) => {
       }
     };
     getUser();
-  }, [accid, setUser]);
+  }, [accid, setUser, setPartner]);
 
   return (
     <SiteLayout>

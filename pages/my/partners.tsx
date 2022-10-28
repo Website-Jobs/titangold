@@ -38,7 +38,7 @@ const Accounts: NextPage = ({ accid }: any) => {
     };
     getUsers();
     getUser();
-  }, [accid, busy]);
+  }, [accid, busy, setUser]);
 
   const deleteThisPartner = async (userid: any) => {
     setBusy(true);

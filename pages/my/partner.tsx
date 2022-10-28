@@ -40,7 +40,7 @@ const Partner: NextPage = ({ accid }: any) => {
       }
     };
     getUser();
-  }, [accid, setUser]);
+  }, [accid, setUser, setPartner]);
 
   return (
     <SiteLayout>
