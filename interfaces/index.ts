@@ -11,7 +11,6 @@ export interface ResponseFunctions {
 export interface IUser {
     _id?: string;
     id?: string;
-    accid?: number;
     avatar?: string;
     role?: string;
     partnerid?:string,

@@ -9,10 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@typegoose/auto-increment": "^1.8.0",
-    "cloudinary": "^1.32.0",
-    "cloudinary-core": "^2.13.0",
-    "formidable": "^2.0.1",
     "jotai": "^1.8.6",
     "js-cookie": "^3.0.1",
     "mongoose": "^6.7.0",

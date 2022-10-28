@@ -1,13 +1,8 @@
 import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
-const {AutoIncrementID} =  require("@typegoose/auto-increment");
 
 const accountsScheme = new mongoose.Schema(
     {
-        accid: {
-            type: Number,
-            unique:true
-        },
         avatar: {
             type: String,
             default:'/avatar/user.png'
@@ -38,6 +33,5 @@ const accountsScheme = new mongoose.Schema(
 delete mongoose.models.Accounts;
 
 
-accountsScheme.plugin(AutoIncrementID, {field: 'accid'});
 const Accounts = mongoose.models.Accounts || mongoose.model('Accounts', accountsScheme);
 export default Accounts;

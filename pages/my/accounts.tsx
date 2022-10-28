@@ -54,20 +54,6 @@ const Accounts: NextPage = ({ accid }: any) => {
     }
   };
 
-  const mergeThisUser = async (userid: any) => {
-    setBusy(true);
-    const response = await fetch(`/api/users/${userid}/merge`);
-    const deleted = await response.json();
-    if (deleted.status) {
-      toast("Great! You have merged this account succesfully", {
-        autoClose: 5000,
-        type: "success",
-      });
-      setBusy(false);
-      router.push("/my/accounts?done=+");
-    }
-  };
-
   return (
     <SiteLayout>
       <SubHero
