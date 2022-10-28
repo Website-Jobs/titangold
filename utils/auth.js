@@ -16,6 +16,17 @@ export const logout = () => {
     window.localStorage.setItem('logout', Date.now())
     Router.push("/users/login")
 }
+
+export const loggedIn = ctx => {
+    // Checks if there is a saved token and it's still valid
+    const { accid } = nextCookie(ctx);
+    if (!accid) {
+        return false;
+    }
+    return true;
+}
+
+
 export const auth = ctx => {
     const { accid } = nextCookie(ctx)
     if (!accid) {

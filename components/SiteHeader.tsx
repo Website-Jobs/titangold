@@ -3,15 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { accidAtom } from "../app";
 import { useAtom } from "jotai";
-import { logout } from "../utils/auth";
+import { logout, loggedIn } from "../utils/auth";
 
 function SiteHeader() {
-  const [accid, setAccid] = useAtom(accidAtom);
-  useEffect(() => {
-    if (!accid) {
-      logout;
-    }
-  }, [accid, setAccid]);
+  const [accid] = useAtom(accidAtom);
 
   return (
     <>
@@ -82,7 +77,7 @@ function SiteHeader() {
                     </ul>
                   </div>
                   <div className="button add-list-button">
-                    {accid ? (
+                    {accid && loggedIn() ? (
                       <>
                         <Link href="/my">
                           <a className="btn">Dashboard</a>
