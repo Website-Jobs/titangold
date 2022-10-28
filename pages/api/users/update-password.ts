@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { dbCon } from '../../../models';
 import { ResponseFunctions } from '../../../interfaces';
-const bcrypt = require('bcryptjs');
 
 interface IIpdateResult {
     acknowledged?: Boolean;
