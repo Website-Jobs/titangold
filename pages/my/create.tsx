@@ -43,9 +43,7 @@ const CreateUser: NextPage = ({ accid }: any) => {
           fileName: "{UNIQUE_DIGITS_8}{ORIGINAL_FILE_EXT}",
         },
       });
-      if (fileUrl) {
-        setAccount({ ...account, avatar: fileUrl });
-      }
+      setAccount({ ...account, avatar: fileUrl });
     }
   };
 
