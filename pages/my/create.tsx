@@ -39,7 +39,7 @@ const CreateUser: NextPage = ({ accid }: any) => {
         onBegin: ({ cancel }: any) => {},
         onProgress: ({ bytesSent, bytesTotal }: any) => {},
         path: {
-          folderPath: "/uploads/titangold/{UTC_YEAR}/{UTC_MONTH}/{UTC_DAY}",
+          folderPath: "/uploads/{UTC_YEAR}/{UTC_MONTH}/{UTC_DAY}",
           fileName: "{UNIQUE_DIGITS_8}{ORIGINAL_FILE_EXT}",
         },
       });
