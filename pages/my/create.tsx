@@ -36,15 +36,10 @@ const CreateUser: NextPage = ({ accid }: any) => {
       setImage(file);
       setCreateObjectURL(URL.createObjectURL(file));
       const { fileUrl, filePath } = await upload.uploadFile(file, {
-        onBegin: ({ cancel }: any) => {
-          // Call 'cancel()' to stop the upload.
-        },
-        onProgress: ({ bytesSent, bytesTotal }: any) => {
-          // Use this to display progress.
-        },
+        onBegin: ({ cancel }: any) => {},
+        onProgress: ({ bytesSent, bytesTotal }: any) => {},
         path: {
-          // See "custom file paths" documentation below.
-          folderPath: "/titangold/{UTC_YEAR}/{UTC_MONTH}/{UTC_DAY}",
+          folderPath: "/uploads/titangold/{UTC_YEAR}/{UTC_MONTH}/{UTC_DAY}",
           fileName: "{UNIQUE_DIGITS_8}{ORIGINAL_FILE_EXT}",
         },
       });
