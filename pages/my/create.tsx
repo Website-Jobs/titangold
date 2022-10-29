@@ -33,8 +33,6 @@ const CreateUser: NextPage = ({ accid }: any) => {
 
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
-      setImage(file);
-      setCreateObjectURL(URL.createObjectURL(file));
       const { fileUrl, filePath } = await upload.uploadFile(file, {
         onBegin: ({ cancel }: any) => {},
         onProgress: ({ bytesSent, bytesTotal }: any) => {},
@@ -43,6 +41,8 @@ const CreateUser: NextPage = ({ accid }: any) => {
           fileName: "{UNIQUE_DIGITS_8}{ORIGINAL_FILE_EXT}",
         },
       });
+      setImage(file);
+      setCreateObjectURL(URL.createObjectURL(file));
       setAccount({ ...account, avatar: fileUrl });
     }
   };
