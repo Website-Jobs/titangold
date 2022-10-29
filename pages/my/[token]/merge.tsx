@@ -135,7 +135,7 @@ const Profile: NextPage = ({ accid }: any) => {
                           className="form-control form-control-lg"
                           onChange={(e) => setPartnerId(e.target.value)}
                         >
-                          <option value={""} selected={true}>
+                          <option value={""} defaultValue="">
                             Select Partner
                           </option>
                           {partners.map((partner) => (

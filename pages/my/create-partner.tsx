@@ -22,14 +22,41 @@ const CreateUser: NextPage = ({ accid }: any) => {
   const [partner, setPartner] = useAtom(newPartnerAtom);
   const router = useRouter();
 
+  const [hasimage, setHasimage] = useState(false);
+
   const [image, setImage] = useState("");
   const [createObjectURL, setCreateObjectURL] = useState("/avatar/user.png");
 
-  const uploadToClient = (event: any) => {
+  const uploadToClient = async (event: any) => {
     if (event.target.files && event.target.files[0]) {
       const i = event.target.files[0];
       setImage(i);
       setCreateObjectURL(URL.createObjectURL(i));
+      // try upload //
+      const fd = new FormData();
+      fd.append("avatar", image);
+
+      let res = await fetch(`/api/uploader`, {
+        method: "POST",
+        body: fd,
+      });
+
+      let response = await res.json();
+      if (response.status) {
+        setHasimage(true);
+        setPartner({ ...partner, avatar: response.file });
+      } else {
+        setHasimage(false);
+        toast(
+          "Sorry! Do reupload or select the photos again to attch it to file.",
+          {
+            autoClose: 10000,
+            type: "error",
+          }
+        );
+        setPartner({ ...partner, avatar: "/avatar/user.png" });
+      }
+      // upload //
     }
   };
 
@@ -44,6 +71,18 @@ const CreateUser: NextPage = ({ accid }: any) => {
 
   const createPartnerr = async (event: React.SyntheticEvent) => {
     event.preventDefault();
+
+    if (!hasimage) {
+      toast(
+        "Sorry! Do reupload or select the photos again to attch it to file.",
+        {
+          autoClose: 6000,
+          type: "error",
+        }
+      );
+      return;
+    }
+
     const response = await fetch(`/api/partners/create`, {
       method: "post",
       mode: "cors",

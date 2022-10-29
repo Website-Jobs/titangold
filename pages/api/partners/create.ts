@@ -11,7 +11,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
         POST: async (req: NextApiRequest, res: NextApiResponse) => {
 
-            const { firstname, lastname, mobile, email, country, address, gold, amount, created } = req.body;
+            const { firstname, lastname, mobile, email, country, address, gold, amount, created, avatar } = req.body;
             console.log(req.body);
 
             const { Partners } = await dbCon();
@@ -26,6 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                 gold: gold,
                 amount: amount,
                 created: created,
+                avatar: avatar
 
             }).catch(catcher);
             if (!partnercreated) {

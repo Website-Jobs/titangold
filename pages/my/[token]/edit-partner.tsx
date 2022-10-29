@@ -85,7 +85,7 @@ const EditPartner: NextPage = ({ accid }: any) => {
                 <div className="col-lg-12">
                   <span style={{ float: "right" }}>
                     <Image
-                      src={createObjectURL}
+                      src={`${partner.avatar}`}
                       width={200}
                       height={200}
                       alt={""}

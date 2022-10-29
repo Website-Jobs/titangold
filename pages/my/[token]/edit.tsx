@@ -74,10 +74,10 @@ const Profile: NextPage = ({ accid }: any) => {
                 <div className="col-lg-12">
                   <span style={{ float: "right" }}>
                     <Image
-                      src={`${user.avatar}`}
+                      src={`${account.avatar}`}
                       width={100}
                       height={100}
-                      alt={user.firstname}
+                      alt={account.firstname}
                     />
                   </span>
                 </div>

@@ -12,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         POST: async (req: NextApiRequest, res: NextApiResponse) => {
 
             const { id } = req.query;
-            const { firstname, lastname, mobile, email, country, address, gold, amount, created } = req.body;
+            const { firstname, lastname, mobile, email, country, address, gold, amount, created , avatar} = req.body;
 
             const { Partners } = await dbCon();
             const partner = await Partners.updateOne(
@@ -26,7 +26,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                     country: country,
                     gold: gold,
                     amount: amount,
-                    created: created
+                    created: created,
+                    avatar:avatar
                 }
             ).catch(catcher);
             if (partner) {
