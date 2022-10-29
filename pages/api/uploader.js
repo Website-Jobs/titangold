@@ -41,9 +41,9 @@ apiRoute.use(upload.array("avatar")); // attribute name you are sending the file
 
 apiRoute.post((req, res) => {
     if (filename) {
-        res.status(200).json({ status: true, file: '/avatar/' + filename }); // response
+        res.status(200).json({ status: true, file: '/avatar/' + filename });
     } else {
-        res.status(200).json({ status: false }); // response
+        res.status(200).json({ status: false });
     }
 });
 

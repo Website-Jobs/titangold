@@ -4,6 +4,9 @@ import SubHero from "../../components/SubHero";
 import dynamic from "next/dynamic";
 import { toast } from "react-toastify";
 
+const { Upload } = require("upload-js");
+const upload = Upload({ apiKey: "public_12a1xrd86dBd9ccC1KzXUKPtsqRn" });
+
 const SiteLayout = dynamic(
   () => {
     return import("../../components/SiteLayout");
@@ -22,8 +25,6 @@ const CreateUser: NextPage = ({ accid }: any) => {
   const [account, setAccount] = useAtom(newUserAtom);
   const router = useRouter();
 
-  const [hasimage, setHasimage] = useState(false);
-
   const [image, setImage] = useState("");
   const [createObjectURL, setCreateObjectURL] = useState("/avatar/user.png");
 
@@ -31,33 +32,25 @@ const CreateUser: NextPage = ({ accid }: any) => {
     event.preventDefault();
 
     if (event.target.files && event.target.files[0]) {
-      const i = event.target.files[0];
-      setImage(i);
-      setCreateObjectURL(URL.createObjectURL(i));
-      // try upload //
-      const fd = new FormData();
-      fd.append("avatar", image);
-
-      let res = await fetch(`/api/uploader`, {
-        method: "POST",
-        body: fd,
+      const file = event.target.files[0];
+      setImage(file);
+      setCreateObjectURL(URL.createObjectURL(file));
+      const { fileUrl, filePath } = await upload.uploadFile(file, {
+        onBegin: ({ cancel }: any) => {
+          // Call 'cancel()' to stop the upload.
+        },
+        onProgress: ({ bytesSent, bytesTotal }: any) => {
+          // Use this to display progress.
+        },
+        path: {
+          // See "custom file paths" documentation below.
+          folderPath: "/titangold/{UTC_YEAR}/{UTC_MONTH}/{UTC_DAY}",
+          fileName: "{UNIQUE_DIGITS_8}{ORIGINAL_FILE_EXT}",
+        },
       });
-      let response = await res.json();
-      if (response.status) {
-        setHasimage(true);
-        setAccount({ ...account, avatar: response.file });
-      } else {
-        setHasimage(false);
-        toast(
-          "Sorry! Do reupload or select the photos again to attch it to file.",
-          {
-            autoClose: 10000,
-            type: "error",
-          }
-        );
-        setAccount({ ...account, avatar: "/avatar/user.png" });
+      if (fileUrl) {
+        setAccount({ ...account, avatar: fileUrl });
       }
-      // upload //
     }
   };
 
@@ -72,17 +65,6 @@ const CreateUser: NextPage = ({ accid }: any) => {
 
   const createUser = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-
-    if (!hasimage) {
-      toast(
-        "Sorry! Do reupload or select the photos again to attch it to file.",
-        {
-          autoClose: 6000,
-          type: "error",
-        }
-      );
-      return;
-    }
 
     const body = new FormData();
     body.append("avatar", image);
