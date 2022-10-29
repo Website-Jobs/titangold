@@ -25,8 +25,6 @@ const CreateUser: NextPage = ({ accid }: any) => {
   const [partner, setPartner] = useAtom(newPartnerAtom);
   const router = useRouter();
 
-  const [count, setCount] = useState(0);
-
   const [image, setImage] = useState("");
   const [createObjectURL, setCreateObjectURL] = useState("/avatar/user.png");
 
