@@ -108,17 +108,6 @@ const MyHome: NextPage = ({ accid }: any) => {
                           </Link>
                         </div>
                       </div>
-                      <div className="col-lg-3 col-md-6">
-                        <div
-                          className="service-item bg-dark mt-25 wow fadeInUp"
-                          data-wow-delay=".2s"
-                        >
-                          <i className="flaticon-checkmark" />
-                          <Link href="/my/partners">
-                            <h5>All Partners</h5>
-                          </Link>
-                        </div>
-                      </div>
 
                       <div className="col-lg-3 col-md-6">
                         <div
