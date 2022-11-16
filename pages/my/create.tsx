@@ -4,6 +4,7 @@ import SubHero from "../../components/SubHero";
 import dynamic from "next/dynamic";
 import { toast } from "react-toastify";
 
+
 const { Upload } = require("upload-js");
 const upload = Upload({ apiKey: "public_12a1xrd86dBd9ccC1KzXUKPtsqRn" });
 

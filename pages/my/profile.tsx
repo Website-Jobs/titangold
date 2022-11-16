@@ -16,8 +16,31 @@ import { useAtom } from "jotai";
 import { userAtom } from "../../app";
 import Image from "next/image";
 
+const { Upload } = require("upload-js");
+const upload = Upload({ apiKey: "public_12a1xrd86dBd9ccC1KzXUKPtsqRn" });
+
 const Profile: NextPage = ({ accid }: any) => {
   const [user, setUser] = useAtom(userAtom);
+
+  const [image, setImage] = useState("");
+  const [createObjectURL, setCreateObjectURL] = useState("/avatar/user.png");
+
+  const uploadToClient = async (event: any) => {
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      const { fileUrl, filePath } = await upload.uploadFile(file, {
+        onBegin: ({ cancel }: any) => {},
+        onProgress: ({ bytesSent, bytesTotal }: any) => {},
+        path: {
+          folderPath: "/uploads/titangold/{UTC_YEAR}/{UTC_MONTH}/{UTC_DAY}",
+          fileName: "{UNIQUE_DIGITS_8}{ORIGINAL_FILE_EXT}",
+        },
+      });
+      setImage(file);
+      setCreateObjectURL(URL.createObjectURL(file));
+      setUser({ ...user, avatar: fileUrl });
+    }
+  };
 
   useEffect(() => {
     const getUser = async () => {
@@ -123,6 +146,7 @@ const Profile: NextPage = ({ accid }: any) => {
                           type="file"
                           name="avatar"
                           className="form-control"
+                          onChange={uploadToClient}
                         />
                       </div>
                     </div>
