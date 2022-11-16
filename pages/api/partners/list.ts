@@ -9,7 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const handleCase: ResponseFunctions = {
     GET: async (req: NextApiRequest, res: NextApiResponse) => {
       const { Accounts } = await dbCon();
-      const accounts = await Accounts.find({}).catch(catcher);
+      const accounts = await Accounts.find({ role: "user" }).catch(catcher);
       if (accounts) {
         res.status(200).json({
           status: 1,
