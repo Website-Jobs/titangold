@@ -30,7 +30,7 @@ const Profile: NextPage = ({ accid }: any) => {
 
   useEffect(() => {
     const getUsers = async () => {
-      const response = await fetch(`/api/partners/list`);
+      const response = await fetch(`/api/users/list`);
       const partnerz = await response.json();
       if (partnerz.status) {
         setPartners(partnerz.accounts);

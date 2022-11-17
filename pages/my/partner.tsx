@@ -17,16 +17,16 @@ import { useAtom } from "jotai";
 import { userAtom, partnerAtom } from "../../app";
 
 const Partner: NextPage = ({ accid }: any) => {
+  //||\\
   const [user, setUser] = useAtom(userAtom);
   const [partner, setPartner] = useAtom(partnerAtom);
   const [hasPartner, setHasPartner] = useState(false);
-
+  //|\\
   useEffect(() => {
     const getPartner = async (partnerid: any) => {
-      const response = await fetch(`/api/partners/${partnerid}/info`);
+      const response = await fetch(`/api/users/${partnerid}/info`);
       const partner = await response.json();
       setPartner(partner);
-      alert(JSON.stringify(partner));
     };
     const getUser = async () => {
       const response = await fetch(`/api/users/${accid}/info`);
@@ -65,6 +65,14 @@ const Partner: NextPage = ({ accid }: any) => {
                         width={200}
                         height={200}
                         alt={partner.firstname}
+                      />
+                    </span>
+                    <span style={{ float: "right" }}>
+                      <Image
+                        src={`${user.avatar}`}
+                        width={200}
+                        height={200}
+                        alt={user.firstname}
                       />
                     </span>
                     <div id="form-messages" />

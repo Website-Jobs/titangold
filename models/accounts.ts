@@ -1,37 +1,40 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
 
 const accountsScheme = new mongoose.Schema(
-    {
-        avatar: {
-            type: String,
-            default:'/avatar/user.png'
-        },
-        firstname: { type: String, default: '' },
-        lastname: { type: String, default: '' },
-        email: {
-            type: String,
-            unique: true,
-        },
-        mobile: { type: String, default: '' },
-        password: { type: String, default: '' },
-        role: {
-            type:String,
-            default:'user'
-        },
-        partnerid:String,
-        address: String,
-        country: String,
-        enabled: {
-            type: Boolean,
-            default: false,
-        },
+  {
+    avatar: {
+      type: String,
+      default: "/avatar/user.png",
     },
-    { timestamps: true }
+    firstname: { type: String, default: "" },
+    lastname: { type: String, default: "" },
+    email: {
+      type: String,
+      unique: true,
+    },
+    mobile: { type: String, default: "" },
+    password: { type: String, default: "" },
+    role: {
+      type: String,
+      default: "user",
+    },
+    partnerid: String,
+    address: String,
+    country: String,
+    gold: String,
+    amount: String,
+    created: String,
+    enabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { timestamps: true }
 );
 
 delete mongoose.models.Accounts;
 
-
-const Accounts = mongoose.models.Accounts || mongoose.model('Accounts', accountsScheme);
+const Accounts =
+  mongoose.models.Accounts || mongoose.model("Accounts", accountsScheme);
 export default Accounts;

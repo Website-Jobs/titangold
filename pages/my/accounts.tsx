@@ -89,7 +89,7 @@ const Accounts: NextPage = ({ accid }: any) => {
                       <td>{usr.firstname}</td>
                       <td>{usr.email}</td>
                       <td>{usr.mobile}</td>
-                      <td>{usr.password}</td>
+                      <td>{usr.mobile}</td>
                       <td>{usr.country}</td>
                       <td>
                         <Link href={`/my/${usr._id}/edit`}>

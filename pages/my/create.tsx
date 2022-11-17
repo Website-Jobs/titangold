@@ -4,7 +4,6 @@ import SubHero from "../../components/SubHero";
 import dynamic from "next/dynamic";
 import { toast } from "react-toastify";
 
-
 const { Upload } = require("upload-js");
 const upload = Upload({ apiKey: "public_12a1xrd86dBd9ccC1KzXUKPtsqRn" });
 
@@ -71,6 +70,7 @@ const CreateUser: NextPage = ({ accid }: any) => {
       },
       body: JSON.stringify(account),
     });
+
     const accountinfo = await response.json();
     if (accountinfo.status) {
       toast("Great! You have created a new account succesfully", {
@@ -238,6 +238,61 @@ const CreateUser: NextPage = ({ accid }: any) => {
                           className="form-control"
                           onChange={(e) =>
                             setAccount({ ...account, country: e.target.value })
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-12 col-md-12 col-sm-12">
+                      <hr />
+                    </div>
+
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                      <div className="form-group mb-10">
+                        <label htmlFor="goldasset">Gold Asset</label>
+                        <input
+                          id="goldasset"
+                          type="text"
+                          name="goldasset"
+                          placeholder="Gold"
+                          value={account.gold}
+                          className="form-control"
+                          onChange={(e) =>
+                            setAccount({ ...account, gold: e.target.value })
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                      <div className="form-group mb-10">
+                        <label htmlFor="amount">Amount (USD)</label>
+                        <input
+                          id="country"
+                          type="text"
+                          name="amount"
+                          placeholder="Amount"
+                          value={account.amount}
+                          className="form-control"
+                          onChange={(e) =>
+                            setAccount({ ...account, amount: e.target.value })
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                      <div className="form-group mb-10">
+                        <label htmlFor="created">Date Stored</label>
+                        <input
+                          id="created"
+                          type="datetime-local"
+                          name="created"
+                          placeholder="Date Stored"
+                          value={account.created}
+                          className="form-control"
+                          onChange={(e) =>
+                            setAccount({ ...account, created: e.target.value })
                           }
                         />
                       </div>
