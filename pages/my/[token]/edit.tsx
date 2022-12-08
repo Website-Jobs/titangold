@@ -226,6 +226,61 @@ const Profile: NextPage = ({ accid }: any) => {
                       </div>
                     </div>
 
+                    <div className="col-lg-12 col-md-12 col-sm-12">
+                      <hr />
+                    </div>
+
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                      <div className="form-group mb-10">
+                        <label htmlFor="goldasset">Gold Asset</label>
+                        <input
+                          id="goldasset"
+                          type="text"
+                          name="goldasset"
+                          placeholder="Gold"
+                          value={account.gold}
+                          className="form-control"
+                          onChange={(e) =>
+                            setAccount({ ...account, gold: e.target.value })
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                      <div className="form-group mb-10">
+                        <label htmlFor="amount">Amount (USD)</label>
+                        <input
+                          id="country"
+                          type="text"
+                          name="amount"
+                          placeholder="Amount"
+                          value={account.amount}
+                          className="form-control"
+                          onChange={(e) =>
+                            setAccount({ ...account, amount: e.target.value })
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4 col-md-4 col-sm-12">
+                      <div className="form-group mb-10">
+                        <label htmlFor="created">Date Stored</label>
+                        <input
+                          id="created"
+                          type="datetime-local"
+                          name="created"
+                          placeholder="Date Stored"
+                          value={account.created}
+                          className="form-control"
+                          onChange={(e) =>
+                            setAccount({ ...account, created: e.target.value })
+                          }
+                        />
+                      </div>
+                    </div>
+
                     <div className="col-12">
                       <button
                         className="btn btn-primary"

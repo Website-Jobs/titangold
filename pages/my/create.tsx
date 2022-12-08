@@ -79,6 +79,7 @@ const CreateUser: NextPage = ({ accid }: any) => {
       });
       router.push("/my/accounts");
     }
+    router.push("/my/accounts");
   };
 
   return (

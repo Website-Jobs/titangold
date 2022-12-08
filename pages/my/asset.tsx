@@ -72,14 +72,14 @@ const Asset: NextPage = ({ accid }: any) => {
                             <div className="col-lg-12 col-md-12 col-sm-12">
                               <div className="form-group mb-10">
                                 <label>Gold Value (USD)</label>
-                                <h3>$500,000.00 USD</h3>
+                                <h3>${partner.amount} USD</h3>
                               </div>
                             </div>
 
                             <div className="col-lg-12 col-md-12 col-sm-12">
                               <div className="form-group mb-10">
                                 <label>Investment Date</label>
-                                <h3>Date Invested</h3>
+                                <h3>{partner.created}</h3>
                               </div>
                             </div>
                             <div className="col-lg-12 col-md-12 col-sm-12">
@@ -87,7 +87,7 @@ const Asset: NextPage = ({ accid }: any) => {
                                 <label htmlFor="mobile">
                                   Mobile / Telephone
                                 </label>
-                                <h3>{user.mobile}</h3>
+                                <h3>{partner.mobile}</h3>
                               </div>
                             </div>
                           </div>

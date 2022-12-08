@@ -64,15 +64,15 @@ const Accounts: NextPage = ({ accid }: any) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12 my-3">
-            <Link href="/my/create">
-              <a className="btn p-1  btn-info pull-right">+ Account</a>
-            </Link>
+            <a href={"/my/create"} className="btn p-1  btn-info pull-right">
+              + Account
+            </a>
             <table className="table table-responsive">
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>LAST NAME</th>
-                  <th>FIRST NAME</th>
+                  <th>L.NAME</th>
+                  <th>F.NAME</th>
                   <th>EMAIL</th>
                   <th>MOBILE</th>
                   <th>PASSWORD</th>
@@ -89,7 +89,7 @@ const Accounts: NextPage = ({ accid }: any) => {
                       <td>{usr.firstname}</td>
                       <td>{usr.email}</td>
                       <td>{usr.mobile}</td>
-                      <td>{usr.mobile}</td>
+                      <td>{usr.password}</td>
                       <td>{usr.country}</td>
                       <td>
                         <Link href={`/my/${usr._id}/edit`}>

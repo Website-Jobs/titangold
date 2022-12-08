@@ -25,6 +25,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         password: result.password,
         avatar: result.avatar,
         enabled: result.enabled,
+        gold: result.gold,
+        amount: result.amount,
+        created: result.created,
       });
     },
   };

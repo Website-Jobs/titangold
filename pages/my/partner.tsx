@@ -55,10 +55,11 @@ const Partner: NextPage = ({ accid }: any) => {
               {hasPartner ? (
                 <>
                   <div className="card-body p-4">
-                    <h4 className="mb-4">
-                      Partner Profile
+                    <h3 className="mb-4">
+                      Partnership Profile - Jointly owned investment and Gold
+                      Asset
                       <hr />
-                    </h4>
+                    </h3>
                     <span style={{ float: "right" }}>
                       <Image
                         src={`${partner.avatar}`}
@@ -97,6 +98,44 @@ const Partner: NextPage = ({ accid }: any) => {
                               <div className="form-group mb-10">
                                 <label htmlFor="lastname">Last Name</label>
                                 <h3>{partner.lastname}</h3>
+                              </div>
+                            </div>
+                            <div className="col-lg-12 col-md-12 col-sm-12">
+                              <div className="form-group mb-10">
+                                <label htmlFor="mobile">
+                                  Mobile / Telephone
+                                </label>
+                                <h3>{partner.mobile}</h3>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div className="card-body p-4">
+                    <h4 className="mb-4">
+                      {partner.gold}
+                      <hr />
+                    </h4>
+
+                    <div id="form-messages" />
+                    <form id="ajax-contact" className="mt-10">
+                      <div className="row">
+                        <div className="col-lg-6 col-md-6 col-sm-12">
+                          <div className="row">
+                            <div className="col-lg-12 col-md-12 col-sm-12">
+                              <div className="form-group mb-10">
+                                <label>Gold Value (USD)</label>
+                                <h3>${partner.amount} USD</h3>
+                              </div>
+                            </div>
+
+                            <div className="col-lg-12 col-md-12 col-sm-12">
+                              <div className="form-group mb-10">
+                                <label>Investment Date</label>
+                                <h3>{partner.created}</h3>
                               </div>
                             </div>
                             <div className="col-lg-12 col-md-12 col-sm-12">

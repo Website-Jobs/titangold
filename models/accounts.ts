@@ -3,6 +3,7 @@ mongoose.Promise = global.Promise;
 
 const accountsScheme = new mongoose.Schema(
   {
+    partnerid: String,
     avatar: {
       type: String,
       default: "/avatar/user.png",
@@ -14,16 +15,15 @@ const accountsScheme = new mongoose.Schema(
       unique: true,
     },
     mobile: { type: String, default: "" },
-    password: { type: String, default: "" },
+    password: { type: String },
     role: {
       type: String,
       default: "user",
     },
-    partnerid: String,
     address: String,
     country: String,
-    gold: String,
-    amount: String,
+    gold: { type: String, default: "Gold Assets" },
+    amount: { type: String, default: "0" },
     created: String,
     enabled: {
       type: Boolean,

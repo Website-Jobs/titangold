@@ -23,7 +23,6 @@ const Login: NextPage = () => {
       },
       body: JSON.stringify(user),
     });
-
     const result = await response.json();
 
     if (result.status) {

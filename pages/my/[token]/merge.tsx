@@ -140,9 +140,13 @@ const Profile: NextPage = ({ accid }: any) => {
                           </option>
                           {partners.map((partner) => (
                             <>
-                              <option value={partner._id}>
-                                {partner.lastname} {partner.firstname}
-                              </option>
+                              {partner.role === "admin" ? (
+                                <option value={partner._id}>
+                                  {partner.lastname} {partner.firstname}
+                                </option>
+                              ) : (
+                                <></>
+                              )}
                             </>
                           ))}
                         </select>

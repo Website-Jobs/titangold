@@ -43,6 +43,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         amount: amount,
         created: created,
       }).catch(catcher);
+
+      console.log(accountcreated);
+
       if (!accountcreated) {
         res.status(404).json({ status: 0, err: "Error creating account" });
       } else {

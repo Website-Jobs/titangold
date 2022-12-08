@@ -14,6 +14,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     POST: async (req: NextApiRequest, res: NextApiResponse) => {
       const { accountid, partner } = req.body;
+
       const { Accounts } = await dbCon();
       const account = await Accounts.updateOne(
         { _id: accountid },
@@ -21,6 +22,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           partnerid: partner,
         }
       ).catch(catcher);
+
+      console.log(account);
+
       if (account) {
         res.status(200).json({
           status: 1,
