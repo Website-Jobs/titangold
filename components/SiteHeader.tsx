@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { accidAtom } from "../app";
+import { accidAtom, showMenuAtom } from "../app";
 import { useAtom } from "jotai";
 import { logout, getToken } from "../utils/auth";
 
 function SiteHeader() {
   const [accid] = useAtom(accidAtom);
-
+  const [menu, setMEnu] = useAtom(showMenuAtom);
+  const togleMenu = () => {
+    setMEnu(!menu);
+  };
   return (
     <>
       <header className="header navbar-area">
@@ -28,17 +31,20 @@ function SiteHeader() {
                     className="navbar-toggler mobile-menu-btn"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="/navbarSupportedContent"
+                    data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
+                    onClick={togleMenu}
                   >
                     <span className="toggler-icon" />
                     <span className="toggler-icon" />
                     <span className="toggler-icon" />
                   </button>
                   <div
-                    className="collapse navbar-collapse sub-menu-bar"
+                    className={`${
+                      menu ? " d-block show " : ""
+                    } collapse navbar-collapse sub-menu-bar`}
                     id="navbarSupportedContent"
                   >
                     <ul id="nav" className="navbar-nav ms-auto">
